@@ -1,0 +1,49 @@
+Program Salario ;
+var
+SalarioFinal, Percentual1, Percentual2, Percentual3: Real; //Declarar variáveis em real
+OpcaoSalarial, Opcao1, Opcao2, Opcao3, TotalOpcoes: Integer; //Declarar variáveis em inteiro
+Begin
+Writeln('Informe seu valor salarial:');
+Writeln('1 - R$1.000,00');
+Writeln('2 - R$1.001,00 até R$2.000,00');
+Writeln('3 - Maior que R$2.000,00');
+Writeln('0 - Não Informar');
+Readln(OpcaoSalarial); //Receber o valor 
+
+Opcao1 := 0; //Dar valor 0 a variavel, mas quando for executada opçãoo 1 será somada
+Opcao2 := 0; //Dar valor 0 a variavel, mas quando for executada opçãoo 2 será somada
+Opcao3 := 0; //Dar valor 0 a variavel, mas quando for executada opçãoo 3 será somada   
+
+	While (OpcaoSalarial <> 0) do    //Caso for diferente de 0 ele continua executando
+	begin
+		case (OpcaoSalarial) of
+			1: Opcao1 := Opcao1 + 1;  //Caso for opção 1 ele soma sempre + 1    
+			2: Opcao2 := Opcao2 + 1;  //Caso for opção 2 ele soma sempre + 1  
+			3: Opcao3 := Opcao3 + 1;  //Caso for opção 3 ele soma sempre + 1  
+		end;
+		
+		Writeln('Informe seu valor salarial:');
+		Writeln('1 - R$1.000,00');
+		Writeln('2 - R$1.001,00 até R$2.000,00');
+		Writeln('3 - Maior que R$2.000,00');
+		Writeln('0 - Não Informar');
+		Readln(OpcaoSalarial); //Receber o valor 
+  end;
+  
+  TotalOpcoes := Opcao1 + Opcao2 + Opcao3;  // Soma das opções
+  
+  Percentual1 := (Opcao1 / TotalOpcoes) * 100;  //Receber o percentual da opção 1
+  Percentual2 := (Opcao2 / TotalOpcoes) * 100;  //Receber o percentual da opção 1
+  Percentual3 := (Opcao3 / TotalOpcoes) * 100;  //Receber o percentual da opção 1
+  
+Writeln('Selecionaram opção 1: ', Opcao1); //Quantidade que optaram pela opção 1
+	Writeln(Percentual1 :2:2, '%', ' ganharam aumento de R$193,56.'); //Mostra o percentual da opção 1
+	
+Writeln('Selecionaram opção 2: ', Opcao2); //Quantidade que optaram pela opção 1 //Mostra o percentual da opção 2
+		Writeln(Percentual2 :2:2, '%', ' ganharam aumento de R$174,34.');
+	 
+Writeln('Selecionaram opção 3: ', Opcao3); //Quantidade que optaram pela opção 1
+	Writeln(Percentual3 :2:2, '%', ' ganharam aumento de R$127,89.'); //Mostra o percentual da opção 3  
+	
+Readkey;
+End.
